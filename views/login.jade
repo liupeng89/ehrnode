@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	script(src='http://code.jquery.com/jquery-1.9.1.js')
+	script(src='/javascripts/query.js')
+
+	p Welcome, Mr/Miss #{name}
+	div#query-contents
+		div#query-conditions
+			form(action='/query', method='post')
+				div.input
+					span.label Patient ID:
+					input(type='text', name='patientid')
+				div.input
+					span.label Date:
+					input(type='text', name='date')
+				div.actions
+					input(type='submit', value='Query')
+		div#query-results
